@@ -1,0 +1,67 @@
+# Documentación del Proyecto: NEO GEST
+
+Este documento resume los avances, configuraciones y accesos del sistema NEO GEST tras la última fase de desarrollo.
+
+---
+
+## 1. Resumen de Cambios Recientes
+
+Se ha realizado una modernización completa del ecosistema digital de **NEO GEST**, migrando de tecnologías estáticas a un entorno dinámico y escalable.
+
+### Frontend (Interfaz de Usuario)
+- **Tecnología:** React.js con Vite.
+- **Diseño:** Interfaz "Premium" con temática oscura, acentos dorados y tipografía moderna (Outfit/Inter).
+- **Componentes Implementados:**
+  - **Landing Page:** Sección de bienvenida, servicios y contacto con micro-animaciones.
+  - **Catálogo:** Galería de productos interactiva con filtros y búsqueda.
+  - **Dashboard Administrativo:** Panel centralizado para gestión de ventas, stock y pedidos.
+  - **Módulo de Autenticación:** Sistema de Login y Registro integrado.
+
+### Backend (Lógica y Datos)
+- **Tecnología:** FastAPI (Python).
+- **Base de Datos:** MySQL (Conexiones optimizadas para `neogest_finaldb`).
+- **Funcionalidades:**
+  - Endpoints para registro y autenticación de usuarios.
+  - API para estadísticas en tiempo real del Dashboard.
+  - Middleware CORS configurado para comunicación segura con el Frontend.
+
+---
+
+## 2. Enlaces de Acceso
+
+Para visualizar los cambios y probar la plataforma localmente, utilice los siguientes enlaces:
+
+| Módulo | Enlace Local | Descripción |
+| :--- | :--- | :--- |
+| **Página Principal / Tienda** | [http://localhost:5173](http://localhost:5173) | Vista pública para clientes y navegación. |
+| **Panel Administrativo** | [http://localhost:5173/dashboard](http://localhost:5173/dashboard) | Acceso restringido para gestión del negocio. |
+| **Documentación de API** | [http://localhost:8000/docs](http://localhost:8000/docs) | Interfaz Swagger para probar los endpoints del Backend. |
+
+---
+
+## 3. Credenciales de Acceso (Admin / Dashboard)
+
+Utilice estas claves para ingresar al sistema como administrador y observar las funcionalidades de gestión:
+
+> [!IMPORTANT]
+> **Administrador del Dashboard**
+> - **Correo Electrónico:** `admin@neogest.com`
+> - **Contraseña:** `admin123`
+
+> [!NOTE]
+> **Usuario Cliente (Prueba)**
+> - **Correo Electrónico:** `cliente@neogest.com`
+> - **Contraseña:** `cliente`
+
+---
+
+## 4. Instrucciones de Ejecución
+
+Para iniciar el entorno completo:
+
+1. **Backend:** Ejecutar `python app/main.py` desde la carpeta `neogest-backend`.
+2. **Frontend:** Ejecutar `npm run dev` desde la carpeta `neogest-frontend`.
+
+---
+
+*Documento generado automáticamente por Antigravity para el equipo de ADSO SENA.*
