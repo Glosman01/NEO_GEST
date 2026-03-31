@@ -12,9 +12,6 @@ from passlib.context import CryptContext
 from app.routes import auth_routes
 from app.routes import cliente_routes
 
-
-
-
 # ==============================
 # CREACIÓN DE LA APLICACIÓN
 # ==============================
@@ -24,8 +21,6 @@ app = FastAPI(
     description="API del sistema de gestión de muebles NeoGest",
     version="1.0"
 )
-
-
 # ==============================
 # CONFIGURACIÓN DE CORS
 # Permite conexión con React
