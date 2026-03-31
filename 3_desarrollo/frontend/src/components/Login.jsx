@@ -33,17 +33,40 @@ const Login = ({ onLoginSuccess, onBack, isAdminLogin }) => {
     Aquí se implementa una lógica básica simulada (mock)
     para determinar si el usuario es administrador o cliente.
     */
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Lógica simulada de autenticación
-        if (email === 'admin@neogest.com' && password === 'admin123') {
-            // Si es administrador
-            onLoginSuccess('admin')
+    const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+
+        const data = await response.json()
+
+        console.log("Respuesta backend:", data)
+
+        if (response.ok) {
+            if (data.rol === 1) {
+                onLoginSuccess("admin")
+            } else {
+                onLoginSuccess("cliente")
+            }
         } else {
-            // Si es cliente
-            onLoginSuccess('cliente')
+            alert(data.detail || "Error en login")
         }
+
+    } catch (error) {
+        console.error("Error conectando con API:", error)
+        alert("No se pudo conectar con el servidor")
     }
+}
     /*
     ========================================================
     RENDER DEL COMPONENTE
